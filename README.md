@@ -1,4 +1,4 @@
-# Static-Verilog-Analysis
+# LintLLM
 * The **`Benchmark`** folder contains the benchmarks and detailed description we proposed. <br/>
 * The **`Experiment_Results`** folder contains our detailed experiment results. <br/>
 * The **`Scripts`** folder contains our experiment code. <br/>
