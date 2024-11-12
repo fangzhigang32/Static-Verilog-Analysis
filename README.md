@@ -4,7 +4,7 @@
 * The **`Scripts`** folder contains our experiment code. <br/>
 
 <!-- ## Benchmark -->
-<!-- ![1_Benchmark_Simple](Benchmark/1_Benchmark_Simple.png) -->
+![1_Benchmark_Simple](Benchmark/1_Benchmark_Simple.png)
 <!-- ![2_Benchmark_Medium](Benchmark/2_Benchmark_Medium.png) -->
 <!-- ![3_Benchmark_Complex](Benchmark/3_Benchmark_Complex.png) -->
 <!-- ## Results -->
