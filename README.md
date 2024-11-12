@@ -1,7 +1,7 @@
 # Static-Verilog-Analysis
-#### The [Benchmark](https://github.com/fangzhigang32/Static-Verilog-Analysis/tree/f942dbfad4c3a9e2262a99674684b57339796727/Benchmark) folder contains the benchmarks and detailed instructions we proposed. <br/>
-#### The `Experiment_Results` folder contains our detailed experiment results. <br/>
-#### The `Scripts` folder contains our experiment code. <br/>
+* The **`Benchmark`** folder contains the benchmarks and detailed description we proposed. <br/>
+* The **`Experiment_Results`** folder contains our detailed experiment results. <br/>
+* The **`Scripts`** folder contains our experiment code. <br/>
 
 <!-- ## Benchmark -->
 <!-- ![1_Benchmark_Simple](Benchmark/1_Benchmark_Simple.png) -->
