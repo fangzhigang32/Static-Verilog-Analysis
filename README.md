@@ -1,7 +1,7 @@
 # LintLLM
 * The **`Benchmark`** folder contains the benchmarks and detailed description we proposed. <br/>
 * The **`Experiment_Results`** folder contains our detailed experimental results. <br/>
-* The **`Scripts`** folder contains our experimental code. <br/>
+* The **`Scripts`** folder contains our experimental codes. <br/>
 
 ## Benchmark
 ![1_Benchmark_Simple](Benchmark/1_Benchmark_Simple.png)
