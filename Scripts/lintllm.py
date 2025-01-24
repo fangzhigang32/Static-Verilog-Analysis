@@ -30,17 +30,17 @@ step 3: Identify statements
     (1) For statements in the module header, end with (','), and do not punctuate the last statement.
     (2) For statements outside the module header, end with (';').
 step 4: Identify variables
-    (1) For variables defined in the module header, the port type ('input', 'output', 'input') must be defined.
+    (1) For variables defined in the module header, the port type ('input', 'output', 'inout') must be defined.
         a. For 'input' type variables, they must be assigned to other variables.
         b. For 'output' type variables, they need to be assigned values by other variables.
         c. For 'inout' type variables, they can be assigned to other variables or assigned to other variables.
-    (2) For variables not defined in the module header, the port type ('input', 'output', 'input') cannot be defined.
+    (2) For variables not defined in the module header, the port type ('input', 'output', 'inout') cannot be defined.
     (3) For each variable, the data type ('wire', 'reg') must be defined.
         a. For variables of type 'wire', to be used in combinatorial logic.
         b. For variables of type 'reg', to be used in temporal logic.
         c. The default data type for variables is 'wire'.
     (4) For each variable, declare the bit-width ([MSB:LSB], which satisfies MSB>LSB), the default bit-width is 1, which can be omitted.
-        a. Variable of bit width 0 ([0:0]) cannot be declared.
+        a. Variable of bit width 1 ([0:0]) cannot be declared.
         b. For variables with a bit-width greater than 1, use the process to match the bit-width of the variable involved in the operation, neither exceeding the index nor leaving the bit-width free.
     (5) For assigning Values to Variable.
         a. To comply with the bit width requirements, distinguishing between binary, octal and hexadecimal mechanisms; each bit of octal represents three bits of binary, and each bit of hexadecimal represents four bits of binary.
@@ -53,8 +53,8 @@ step 5: Identify 'always' block
         b. Combinational logic.
     (3) Identify sensitive lists.
         a. Sensitive list of temporal logic.
-            ① Each signal in the sensitive list should have a 'posedge' edge or a 'neggedge' edge.
-            ② For the judgment signal in the if condition, the original signal is used for the 'posedge' edge and the negative signal is used for the 'neggedge' edge.
+            ① Each signal in the sensitive list should have a 'posedge' edge or a 'negedge' edge.
+            ② For the judgment signal in the if condition, the original signal is used for the 'posedge' edge and the negative signal is used for the 'negedge' edge.
             ③ Use ('or',',') to connect multiple signals in the sensitive list.
             ④ All signals used in the sensitive list should be listed.
         b. Sensitive list of combinatorial logic.
