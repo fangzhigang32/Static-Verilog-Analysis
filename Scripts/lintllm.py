@@ -7,14 +7,10 @@ from datetime import datetime
 from openai import OpenAI
 from openpyxl import load_workbook
 
-# modelname = "deepseek-coder"
-# modelname = "Llama-3-1-405B-Instruct"
-# modelname = "gpt-4"
-# modelname = "gpt-4o"
-# modelname = "o1-mini"
+modelname = "deepseek-coder"
 
 # create a new folder
-# modelname+P4
+# modelname+res
 
 def llmFun(moduleName,pri_loc):
     verilog_path = pri_loc+'/'+moduleName+'.v'
@@ -106,12 +102,7 @@ RESULT: [YES|NO]
 DEFECT LINE: [line number]
 Please do not output medium processes or other content.'''     
 
-# If there are defects in the code, please indicate which [line number] of code has defect.Following the output template.
-# RESULT: [YES]
-# DEFECT LINE: [line number]
-# If there are no defects in the code, following the output template.
-# RESULT: [NO]
-# Please do not output medium processes or other content.     
+    
     with open(verilog_path,'r',encoding='utf-8') as verilog:
         context = verilog.readlines()
         with open(prompt_txt,'w',encoding='utf-8') as prompt:
@@ -137,7 +128,7 @@ Please do not output medium processes or other content.'''
             ]  
     )
     answer= response.choices[0].message.content
-    rptfile = pri_loc+'/result/'+modelname+'P4/'+moduleName+'_'+modelname+'.rpt'
+    rptfile = pri_loc+'/result/'+modelname+'res/'+moduleName+'_'+modelname+'.rpt'
     with open(rptfile,'w',encoding='utf-8') as file:
         file.write(answer)
 
@@ -146,15 +137,15 @@ def llmF(m,n,new_project,pri_loc):
     for k in range(m,n):
         moduleName = new_project+str(k)
         formatted_time1 = datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]
-        print(formatted_time1+' '+moduleName+' '+modelname+'P4 Lint begin',flush=True)
+        print(formatted_time1+' '+moduleName+' '+modelname+'res Lint begin',flush=True)
         llmFun(moduleName,pri_loc)
         formatted_time2 = datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]
-        print(formatted_time2+' '+moduleName+' '+modelname+'P4 Lint end',flush=True)
+        print(formatted_time2+' '+moduleName+' '+modelname+'res Lint end',flush=True)
     endTime = datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]
     begin = datetime.strptime(beginTime, '%Y-%m-%d %H:%M:%S.%f')
     end = datetime.strptime(endTime, '%Y-%m-%d %H:%M:%S.%f')
     totalSeconds = (end-begin).total_seconds()
-    print('--->'+str(totalSeconds)+'s '+new_project+' '+modelname+'P4 Lint Time',flush=True)
+    print('--->'+str(totalSeconds)+'s '+new_project+' '+modelname+'res Lint Time',flush=True)
 def main():
     m = 1 # update
     n = 31 # update
