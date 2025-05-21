@@ -1,26 +1,58 @@
-# LintLLM
-* The **`Benchmark`** folder contains the benchmarks and detailed description we proposed. <br/>
-* The **`Experiment_Results`** folder contains our detailed experimental results. <br/>
-* The **`Scripts`** folder contains our experimental codes. <br/>
+# LintLLM: An Open-Source Verilog Linting Framework Based on Large Language Models
 
-## Benchmark
-![1_Benchmark_Simple](Benchmark/1_Benchmark_Simple.png)
-<br/><br/>
-![2_Benchmark_Medium](Benchmark/2_Benchmark_Medium.png)
-<br/><br/>
-![3_Benchmark_Complex](Benchmark/3_Benchmark_Complex.png)
-## Results
-![1_MainResults](Experiment_Results/1_MainResults.png)
-<br/><br/>
-![2_DetailResults_1](Experiment_Results/2_DetailResults_1.png)
-<br/><br/>
-![3_DetailResults_2](Experiment_Results/3_DetailResults_2.png)
-<br/><br/>
-![4_DetailResults_3](Experiment_Results/4_DetailResults_3.png)
-<br/><br/>
-![5_DetailResults_4](Experiment_Results/5_DetailResults_4.png)
-<br/><br/>
-![6_DetailResults_5](Experiment_Results/6_DetailResults_5.png)
-<br/><br/><br/>
-![7_DetailResults_6](Experiment_Results/7_DetailResults_6.png)
+[![Paper](https://img.shields.io/badge/GLSVLSI%2725-Paper-blue)](https://doi.org/10.1145/3716368.3735198)
 
+LintLLM is an **open-source Verilog linting framework** powered by Large Language Models (LLMs). It aims to detect potential defects in Verilog RTL designs with higher accuracy and lower false positives than traditional EDA tools. The framework also introduces a **high-quality benchmark** with 90 Verilog designs and 11 categories of injected defects.
+
+## 🔥 Highlights
+
+- 📌 Linting framework based on LLMs for static code analysis.
+- 🌲 Proposes **Prompt of Logic-Tree**, a novel prompt template to guide LLM reasoning.
+- 🧭 Introduces **Defect Tracker**, which reduces false positives by identifying root defects.
+- 🧪 Includes a **benchmark** with 90 Verilog modules across 3 difficulty levels.
+- 💰 Achieves better accuracy than commercial tools at **<1/10** of the cost.
+
+## 🏗️ Components
+
+### 1. Prompt of Logic-Tree
+A structured prompting method that guides LLMs through tree-based logical reasoning, helping them better interpret and detect code defects.
+
+### 2. Defect Tracker
+A three-step algorithm that identifies **root defects** responsible for **multiple secondary issues**, significantly reducing redundancy in LLM outputs.
+
+### 3. Verilog Defect Benchmark
+- Total: 90 modules
+- 11 defect types (e.g., signal usage, port type, logic synthesis issues)
+- Categorized into:
+  - ✅ Simple (30)
+  - ✅ Medium (30)
+  - ✅ Complex (30)
+
+## 📊 Results Summary
+| Tool                  | Correct Rate ↑ | False Positive ↓ |
+| --------------------- | -------------- | ---------------- |
+| Commercial EDA        | 64.44%         | 27.78%           |
+| Verilator             | 62.22%         | 32.22%           |
+| **o1-mini + LintLLM** | **83.33%**     | **12.22%**       |
+
+## 💸 Cost Analysis
+- Detecting 1 million lines with LLMs ≈ $20
+- ⚡ LLMs offer a scalable and cost-effective alternative for SMEs and academia.
+
+## 📜 License
+This project is open-sourced under the MIT License.
+
+## 🧠 Paper
+
+This work was published at [GLSVLSI 2025](https://doi.org/10.1145/3716368.3735198). [arXiv](https://arxiv.org/abs/2502.10815)
+
+## Citation
+```
+@inproceedings{Fang2025lintllm,
+  author={Zhigang Fang and Renzhi Chen and Zhijie Yang and Yang Guo and Huadong Dai and Lei Wang},
+  booktitle={Proceedings of the Great Lakes Symposium on {VLSI} 2025, {GLSVLSI} 2025, New Orleans, LA, USA, June 30-July 2, 2025}, 
+  title={{LintLLM}: An Open-Source Verilog Linting Framework Based on Large Language Models}, 
+  year={2025},
+  publisher={ACM},
+  url={https://doi.org/10.1145/3716368.3735198}
+  }
