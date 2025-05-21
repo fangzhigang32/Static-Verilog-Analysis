@@ -47,6 +47,7 @@ This project is open-sourced under the MIT License.
 This work was published at [GLSVLSI 2025](https://doi.org/10.1145/3716368.3735198). [arXiv](https://arxiv.org/abs/2502.10815)
 
 ## Citation
+If LintLLM could help your project, please cite our work:
 ```
 @inproceedings{Fang2025lintllm,
   author={Zhigang Fang and Renzhi Chen and Zhijie Yang and Yang Guo and Huadong Dai and Lei Wang},
